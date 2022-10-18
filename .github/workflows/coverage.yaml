@@ -13,3 +13,7 @@ jobs:
         with:
           version: latest
       - uses: rijkvanzanten/coverage-change-action@main
+        id: coverage
+      - uses: marocchino/sticky-pull-request-comment@v2
+        with:
+            message: ${{ steps.coverage.outputs.report }}
